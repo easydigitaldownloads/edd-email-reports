@@ -2,8 +2,8 @@
 /**
  * Email Body
  *
- * @author 		Easy Digital Downloads
- * @package 	Easy Digital Downloads/Templates/Emails
+ * @author    Easy Digital Downloads
+ * @package   Easy Digital Downloads/Templates/Emails
  * @version     2.1
  */
 
