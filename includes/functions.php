@@ -253,7 +253,7 @@ if( !defined( 'ABSPATH' ) ) exit;
     add_action( 'edd_email_send_before', 'edd_email_reports_change_email_template' );
 
     EDD()->emails->html = TRUE;
-    EDD()->emails->heading = 'Daily Sales Report – ' . get_bloginfo('name');
+    EDD()->emails->heading = sprintf( __('Daily Sales Report – %1$s', 'edd-email-reports'), get_bloginfo('name') );
     EDD()->emails->send( edd_get_admin_notice_emails(), sprintf( __('Daily Sales Report for %1$s', 'edd-email-reports'), get_bloginfo('name') ), $message );
   }
 
