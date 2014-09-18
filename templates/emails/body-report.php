@@ -2,8 +2,8 @@
 /**
  * Email Body
  *
- * @author    Easy Digital Downloads
- * @package   Easy Digital Downloads/Templates/Emails
+ * @author 		Easy Digital Downloads
+ * @package 	Easy Digital Downloads/Templates/Emails
  * @version     2.1
  */
 
@@ -22,7 +22,9 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
     <tr>
       <td colspan="3" style="padding: 16px;">
-        <h1 style="font-size: 48px; line-height: 1em; margin: 0; color:#4EAD61;"><span style="font-size: 20px; vertical-align: super;">{email_report_currency}</span>{email_report_daily_total}</h1>
+        <h1 style="font-size: 48px; line-height: 1em; margin: 0; color:#4EAD61;">
+          <?php if (edd_get_option('currency_position') == 'before'): ?><span style="font-size: 20px; vertical-align: super;">{email_report_currency}</span><?php endif; ?>{email_report_daily_total}<?php if (edd_get_option('currency_position') == 'after'): ?><span style="font-size: 20px; vertical-align: super;">{email_report_currency}</span><?php endif; ?>
+        </h1>
         <h2 style="margin: 8px 0; color: #222;">{email_report_daily_transactions} <?php _e('orders today', 'edd-email-reports'); ?></h2>
         <h3 style="margin: 0; color: #333;">{email_report_rolling_weekly_total} <?php _e('past seven days', 'edd-email-reports'); ?></h3>
       </td>
