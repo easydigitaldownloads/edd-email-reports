@@ -314,7 +314,7 @@ if( !class_exists( 'EDD_Email_Reports' ) ) {
           add_action( 'edd_email_header', 'edd_email_reports_change_email_template' );
 
           EDD()->emails->html = TRUE;
-          EDD()->emails->heading = 'Daily Sales Report – ' . get_bloginfo('name');
+          EDD()->emails->heading = sprintf( __('Daily Sales Report – %1$s', 'edd-email-reports'), get_bloginfo('name') );
 
           echo EDD()->emails->build_email( $message );
 
