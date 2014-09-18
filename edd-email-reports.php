@@ -157,9 +157,13 @@ if( !class_exists( 'EDD_Email_Reports' ) ) {
          * @return [type] [description]
          */
         public function schedule_daily_email() {
-          if ( ! wp_next_scheduled( 'edd_email_reports_daily_email' ) ) {
+          if ( ! wp_next_scheduled( 'edd_email_reports_daily_email' ) && ! defined('EDD_DISABLE_EMAIL_REPORTS') ) {
+
+          $target_time_zone = new DateTimeZone( get_option('timezone_string') );
+          $date_time = new DateTime('now', $target_time_zone);
+
             wp_schedule_event(
-              strtotime( edd_get_option( 'edd_email_reports_daily_email_delivery_time', 1800 ), current_time('timestamp') ),
+              strtotime( edd_get_option( 'edd_email_reports_daily_email_delivery_time', 1800 ) . 'GMT' . $date_time->format('P'), current_time('timestamp') ),
               'daily',
               'edd_email_reports_daily_email'
             );
