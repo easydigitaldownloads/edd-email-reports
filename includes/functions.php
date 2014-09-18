@@ -183,45 +183,50 @@ if( !defined( 'ABSPATH' ) ) exit;
     $payments = $p_query->get_payments();
     $stats = array();
 
-    foreach($payments as $order) {
-      foreach($order->cart_details as $line_item) {
-        // Skip if this item was purchased as part of a bundle
-        if ( isset( $line_item['in_bundle'] ) ) {
-          continue;
+    if (! empty( $payments) ) {
+
+      foreach($payments as $order) {
+        foreach($order->cart_details as $line_item) {
+          // Skip if this item was purchased as part of a bundle
+          if ( isset( $line_item['in_bundle'] ) ) {
+            continue;
+          }
+
+          $earnings = isset( $stats[$line_item['id']]['earnings'] ) ? $stats[$line_item['id']]['earnings'] : 0;
+          $sales    = isset( $stats[$line_item['id']]['sales'] ) ? $stats[$line_item['id']]['sales'] : 0;
+
+          $stats[$line_item['id']] = array(
+            'name'     => $line_item['name'],
+            'earnings' => $earnings + $line_item['price'],
+            'sales'    => $sales + $line_item['quantity'],
+          );
         }
+      }
 
-        $earnings = isset( $stats[$line_item['id']]['earnings'] ) ? $stats[$line_item['id']]['earnings'] : 0;
-        $sales    = isset( $stats[$line_item['id']]['sales'] ) ? $stats[$line_item['id']]['sales'] : 0;
+      usort($stats, 'edd_email_reports_sort_best_selling_downloads');
+      $color = 111111;
 
-        $stats[$line_item['id']] = array(
-          'name'     => $line_item['name'],
-          'earnings' => $earnings + $line_item['price'],
-          'sales'    => $sales + $line_item['quantity'],
+      ob_start();
+      echo '<ul>';
+      foreach($stats as $list_item):
+
+        printf('<li style="color: #%1$s; padding: 5px 0;"><span style="font-weight: bold;">%2$s</span> – %3$s (%4$s %5$s)</li>',
+          $color,
+          $list_item['name'],
+          edd_currency_filter( edd_format_amount( $list_item['earnings'] ) ),
+          $list_item['sales'],
+          _n('sale', 'sales', $list_item['sales'], 'edd-email-reports')
         );
-      }
+
+        if ($color < 999999) {
+          $color += 111111;
+        }
+      endforeach;
+      echo '</ul>';
+      return ob_get_clean();
+    } else {
+      return '<p>' . __('No sales found.') . '</p>';
     }
-
-    usort($stats, 'edd_email_reports_sort_best_selling_downloads');
-    $color = 111111;
-
-    ob_start();
-    echo '<ul>';
-    foreach($stats as $list_item):
-
-      printf('<li style="color: #%1$s; padding: 5px 0;"><span style="font-weight: bold;">%2$s</span> – %3$s (%4$s %5$s)</li>',
-        $color,
-        $list_item['name'],
-        edd_currency_filter( edd_format_amount( $list_item['earnings'] ) ),
-        $list_item['sales'],
-        _n('sale', 'sales', $list_item['sales'], 'edd-email-reports')
-      );
-
-      if ($color < 999999) {
-        $color += 111111;
-      }
-    endforeach;
-    echo '</ul>';
-    return ob_get_clean();
   }
 
   /**
