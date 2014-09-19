@@ -180,7 +180,7 @@ if( !class_exists( 'EDD_Email_Reports' ) ) {
         public function load_textdomain() {
           // Set filter for language directory
           $lang_dir = EDD_EMAIL_REPORTS_DIR . '/languages/';
-          $lang_dir = apply_filters( 'edd_plugin_name_languages_directory', $lang_dir );
+          $lang_dir = apply_filters( 'edd_email_reports_languages_directory', $lang_dir );
 
           // Traditional WordPress plugin locale filter
           $locale = apply_filters( 'plugin_locale', get_locale(), 'edd-email-reports' );
