@@ -1,0 +1,176 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: EDD Email Reports\n"
+"POT-Creation-Date: 2014-09-19 11:39-0500\n"
+"PO-Revision-Date: 2014-09-19 11:40-0500\n"
+"Last-Translator: Dave Kiss <dave@davekiss.com>\n"
+"Language-Team:  <dave@davekiss.com>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.9\n"
+"X-Poedit-Basepath: ../\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e;_n\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: edd-email-reports.php:220
+msgid "Email Report Template"
+msgstr ""
+
+#: edd-email-reports.php:244
+msgid "Email Reports Settings"
+msgstr ""
+
+#: edd-email-reports.php:245
+msgid "Configure EDD Email Reports Settings"
+msgstr ""
+
+#: edd-email-reports.php:250
+msgid "Daily Email Delivery Time"
+msgstr ""
+
+#: edd-email-reports.php:251
+msgid "Select when you would like to receive your daily email report."
+msgstr ""
+
+#: edd-email-reports.php:254
+msgid "1:00 PM"
+msgstr ""
+
+#: edd-email-reports.php:255
+msgid "2:00 PM"
+msgstr ""
+
+#: edd-email-reports.php:256
+msgid "3:00 PM"
+msgstr ""
+
+#: edd-email-reports.php:257
+msgid "4:00 PM"
+msgstr ""
+
+#: edd-email-reports.php:258
+msgid "5:00 PM"
+msgstr ""
+
+#: edd-email-reports.php:259
+msgid "6:00 PM"
+msgstr ""
+
+#: edd-email-reports.php:260
+msgid "7:00 PM"
+msgstr ""
+
+#: edd-email-reports.php:261
+msgid "8:00 PM"
+msgstr ""
+
+#: edd-email-reports.php:262
+msgid "9:00 PM"
+msgstr ""
+
+#: edd-email-reports.php:263
+msgid "10:00 PM"
+msgstr ""
+
+#: edd-email-reports.php:264
+msgid "11:00 PM"
+msgstr ""
+
+#: edd-email-reports.php:285
+msgid "Preview Email Report"
+msgstr ""
+
+#: edd-email-reports.php:317 includes/functions.php:256
+#, php-format
+msgid "Daily Sales Report – %1$s"
+msgstr ""
+
+#: includes/class.extension-activation.php:47
+msgid "This plugin"
+msgstr ""
+
+#: includes/class.extension-activation.php:89
+msgid " requires Easy Digital Downloads! Please activate it to continue!"
+msgstr ""
+
+#: includes/class.extension-activation.php:91
+msgid " requires Easy Digital Downloads! Please install it to continue!"
+msgstr ""
+
+#: includes/functions.php:38
+msgid "Adds the currency setting for the store."
+msgstr ""
+
+#: includes/functions.php:43 includes/functions.php:48
+msgid "Adds the total amount earned for the day."
+msgstr ""
+
+#: includes/functions.php:53
+msgid "Adds the number of transactions for the day."
+msgstr ""
+
+#: includes/functions.php:58 includes/functions.php:63
+msgid "Adds the total amount earned for the week."
+msgstr ""
+
+#: includes/functions.php:68
+msgid "Adds the total amount earned for the monthly."
+msgstr ""
+
+#: includes/functions.php:73
+msgid "Adds the total amount earned for past seven days."
+msgstr ""
+
+#: includes/functions.php:78
+msgid "Adds the total amount earned for past thirty days."
+msgstr ""
+
+#: includes/functions.php:218
+msgid "sale"
+msgstr ""
+
+#: includes/functions.php:228
+msgid "No sales found."
+msgstr ""
+
+#: includes/functions.php:257
+#, php-format
+msgid "Daily Sales Report for %1$s"
+msgstr ""
+
+#: templates/emails/body-report.php:19
+#, php-format
+msgid "Happy %1$s!"
+msgstr ""
+
+#: templates/emails/body-report.php:28
+msgid "orders today"
+msgstr ""
+
+#: templates/emails/body-report.php:29
+msgid "past seven days"
+msgstr ""
+
+#: templates/emails/body-report.php:34
+msgid "this week"
+msgstr ""
+
+#: templates/emails/body-report.php:35
+msgid "this month"
+msgstr ""
+
+#: templates/emails/body-report.php:36
+msgid "past 30 days"
+msgstr ""
+
+#: templates/emails/body-report.php:43
+msgid "Best-selling downloads over the past week:"
+msgstr ""
+
+#: uninstall.php:4
+msgid "Plugin uninstallation can not be executed in this fashion."
+msgstr ""
