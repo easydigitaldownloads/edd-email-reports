@@ -91,7 +91,7 @@ if( !class_exists( 'EDD_Email_Reports' ) ) {
          */
         private function hooks() {
           // Register settings
-          add_filter( 'edd_settings_extensions', array( $this, 'settings' ), 1 );
+          add_filter( 'edd_settings_emails', array( $this, 'settings' ), 1 );
           add_action( 'edd_email_reports_settings', array($this, 'edd_email_reports_add_email_report_preview') );
 
           // Render the email report preview
