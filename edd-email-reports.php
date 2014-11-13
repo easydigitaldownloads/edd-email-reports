@@ -159,7 +159,8 @@ if( !class_exists( 'EDD_Email_Reports' ) ) {
         public function schedule_daily_email() {
           if ( ! wp_next_scheduled( 'edd_email_reports_daily_email' ) && ! defined('EDD_DISABLE_EMAIL_REPORTS') ) {
 
-          $timezone_string  = ! empty( get_option('timezone_string') ) ? get_option('timezone_string') : 'UTC';
+          $timezone = get_option('timezone_string');
+          $timezone_string  = ! empty( $timezone ) ? $timezone : 'UTC';
           $target_time_zone = new DateTimeZone( $timezone_string );
           $date_time = new DateTime('now', $target_time_zone);
 
