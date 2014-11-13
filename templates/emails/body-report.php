@@ -45,5 +45,12 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
       </td>
     </tr>
 
+    <tr>
+      <td colspan="3" style="text-align: left !important;">
+        <h3 style="margin: 0; padding-left: 40px;"><?php _e('These downloads have been pretty quiet lately:', 'edd-email-reports'); ?></h3>
+        {email_report_cold_selling_downloads}
+      </td>
+    </tr>
+
   </tbody>
 </table>

@@ -78,7 +78,90 @@ if( !defined( 'ABSPATH' ) ) exit;
         'description' => __( 'Adds the total amount earned for past thirty days.', 'edd-email-reports' ),
         'function'    => 'edd_email_reports_rolling_monthly_total'
       ),
+      array(
+        'tag'         => 'email_report_cold_selling_downloads',
+        'description' => __( 'Displays the least selling downloads and their last sale date.', 'edd-email-reports' ),
+        'function'    => 'edd_email_reports_cold_selling_downloads'
+      ),
     ) );
+  }
+
+  /**
+   * Fetch six downloads sorted by the furthest
+   * last sale date.
+   *
+   * @return html
+   */
+  function edd_email_reports_cold_selling_downloads() {
+
+    $args = array(
+      'post_type'   => 'download',
+      'post_status' => 'publish',
+      'posts_per_page' => -1,
+    );
+
+    $result = get_posts($args);
+
+    $last_sale_dates = array();
+    global $edd_logs;
+
+    if ( ! empty( $result ) ) {
+
+      foreach ( $result as $download ) {
+
+        $result = $edd_logs->get_connected_logs( array(
+          'post_parent' => $download->ID,
+          'log_type'    => 'sale',
+          'posts_per_page' => 1
+        ) );
+
+        if ( ! empty( $result ) ) {
+          $last_sale_dates[$download->post_title] = $result[0]->post_date;
+        }
+      }
+
+      if ( ! empty( $last_sale_dates ) ) {
+
+        uasort( $last_sale_dates, 'edd_email_reports_sort_cold_selling_downloads' );
+        $last_sale_dates = array_slice( $last_sale_dates, 0, 6, true );
+
+        $color_prefix = 99;
+
+        ob_start();
+        echo '<ul>';
+        foreach( $last_sale_dates as $download => $date ):
+
+          printf('<li style="color: #%1$s0000; padding: 5px 0;"><span style="font-weight: bold;">%2$s</span> – Last sold <strong>%4$s ago</strong> on <strong>%3$s</strong></li>',
+            $color_prefix,
+            $download,
+            date('F j, Y', strtotime( $date ) ),
+            human_time_diff( strtotime( $date ) )
+          );
+
+          if ($color_prefix > 11) {
+            $color_prefix -= 11;
+          }
+        endforeach;
+        echo '</ul>';
+        return ob_get_clean();
+      } else {
+        return '<p>' . __('No sales found.', 'edd-email-reports') . '</p>';
+      }
+
+    } else {
+      return '<p>' . __('No downloads found.', 'edd-email-reports') . '</p>';
+    }
+  }
+
+  /**
+   * Sort the passed array based on the furthest sale date.
+   *
+   * @param  [type] $a [description]
+   * @param  [type] $b [description]
+   * @return [type]    [description]
+   */
+  function edd_email_reports_sort_cold_selling_downloads( $a, $b ) {
+    return strtotime($a) - strtotime($b);
   }
 
   /**
