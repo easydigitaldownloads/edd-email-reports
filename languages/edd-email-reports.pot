@@ -1,90 +1,90 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: EDD Email Reports\n"
-"POT-Creation-Date: 2014-09-19 11:39-0500\n"
-"PO-Revision-Date: 2014-09-19 11:40-0500\n"
+"POT-Creation-Date: 2014-11-13 17:22-0500\n"
+"PO-Revision-Date: 2014-11-13 17:22-0500\n"
 "Last-Translator: Dave Kiss <dave@davekiss.com>\n"
 "Language-Team:  <dave@davekiss.com>\n"
 "Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.9\n"
+"X-Generator: Poedit 1.6.10\n"
 "X-Poedit-Basepath: ../\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-KeywordsList: __;_e;_n\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: edd-email-reports.php:220
+#: edd-email-reports.php:221
 msgid "Email Report Template"
 msgstr ""
 
-#: edd-email-reports.php:244
+#: edd-email-reports.php:245
 msgid "Email Reports Settings"
 msgstr ""
 
-#: edd-email-reports.php:245
+#: edd-email-reports.php:246
 msgid "Configure EDD Email Reports Settings"
 msgstr ""
 
-#: edd-email-reports.php:250
+#: edd-email-reports.php:251
 msgid "Daily Email Delivery Time"
 msgstr ""
 
-#: edd-email-reports.php:251
+#: edd-email-reports.php:252
 msgid "Select when you would like to receive your daily email report."
 msgstr ""
 
-#: edd-email-reports.php:254
+#: edd-email-reports.php:255
 msgid "1:00 PM"
 msgstr ""
 
-#: edd-email-reports.php:255
+#: edd-email-reports.php:256
 msgid "2:00 PM"
 msgstr ""
 
-#: edd-email-reports.php:256
+#: edd-email-reports.php:257
 msgid "3:00 PM"
 msgstr ""
 
-#: edd-email-reports.php:257
+#: edd-email-reports.php:258
 msgid "4:00 PM"
 msgstr ""
 
-#: edd-email-reports.php:258
+#: edd-email-reports.php:259
 msgid "5:00 PM"
 msgstr ""
 
-#: edd-email-reports.php:259
+#: edd-email-reports.php:260
 msgid "6:00 PM"
 msgstr ""
 
-#: edd-email-reports.php:260
+#: edd-email-reports.php:261
 msgid "7:00 PM"
 msgstr ""
 
-#: edd-email-reports.php:261
+#: edd-email-reports.php:262
 msgid "8:00 PM"
 msgstr ""
 
-#: edd-email-reports.php:262
+#: edd-email-reports.php:263
 msgid "9:00 PM"
 msgstr ""
 
-#: edd-email-reports.php:263
+#: edd-email-reports.php:264
 msgid "10:00 PM"
 msgstr ""
 
-#: edd-email-reports.php:264
+#: edd-email-reports.php:265
 msgid "11:00 PM"
 msgstr ""
 
-#: edd-email-reports.php:285
+#: edd-email-reports.php:286
 msgid "Preview Email Report"
 msgstr ""
 
-#: edd-email-reports.php:317 includes/functions.php:256
+#: edd-email-reports.php:318 includes/functions.php:339
 #, php-format
 msgid "Daily Sales Report – %1$s"
 msgstr ""
@@ -129,15 +129,23 @@ msgstr ""
 msgid "Adds the total amount earned for past thirty days."
 msgstr ""
 
-#: includes/functions.php:218
-msgid "sale"
+#: includes/functions.php:83
+msgid "Displays the least selling downloads and their last sale date."
 msgstr ""
 
-#: includes/functions.php:228
+#: includes/functions.php:148 includes/functions.php:311
 msgid "No sales found."
 msgstr ""
 
-#: includes/functions.php:257
+#: includes/functions.php:152
+msgid "No downloads found."
+msgstr ""
+
+#: includes/functions.php:301
+msgid "sale"
+msgstr ""
+
+#: includes/functions.php:340
 #, php-format
 msgid "Daily Sales Report for %1$s"
 msgstr ""
@@ -169,6 +177,10 @@ msgstr ""
 
 #: templates/emails/body-report.php:43
 msgid "Best-selling downloads over the past week:"
+msgstr ""
+
+#: templates/emails/body-report.php:50
+msgid "These downloads have been pretty quiet lately:"
 msgstr ""
 
 #: uninstall.php:4
