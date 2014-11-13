@@ -3,7 +3,7 @@
  * Plugin Name:     Easy Digital Downloads - Email Reports
  * Plugin URI:      http://easydigitaldownloads.com/extension/email-reports
  * Description:     Sends a beautiful, comprehensive sales performance report once a day to the store admin.
- * Version:         1.0.2
+ * Version:         1.0.3
  * Author:          Dave Kiss
  * Author URI:      http://davekiss.com
  * Text Domain:     edd-email-reports
@@ -60,7 +60,7 @@ if( !class_exists( 'EDD_Email_Reports' ) ) {
          */
         private function setup_constants() {
           // Plugin version
-          define( 'EDD_EMAIL_REPORTS_VER', '1.0.2' );
+          define( 'EDD_EMAIL_REPORTS_VER', '1.0.3' );
 
           // Plugin path
           define( 'EDD_EMAIL_REPORTS_DIR', plugin_dir_path( __FILE__ ) );
