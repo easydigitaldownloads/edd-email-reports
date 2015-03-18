@@ -77,8 +77,6 @@ if( !class_exists( 'EDD_Email_Reports' ) ) {
          * @return      void
          */
         private function includes() {
-          // Include scripts
-          require_once EDD_EMAIL_REPORTS_DIR . 'includes/scripts.php';
           require_once EDD_EMAIL_REPORTS_DIR . 'includes/functions.php';
         }
 
