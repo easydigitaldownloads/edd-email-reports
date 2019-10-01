@@ -2,33 +2,36 @@
 /**
  * Email Header
  *
- * @author 		Easy Digital Downloads
- * @package 	Easy Digital Downloads/Templates/Emails
+ * @author      Easy Digital Downloads
+ * @package     Easy Digital Downloads/Templates/Emails
  * @version     2.1
  */
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
-// For gmail compatibility, including CSS styles in head/body are stripped out therefore styles need to be inline. These variables contain rules which are added to the template inline. !important; is a gmail hack to prevent styles being stripped if it doesn't like something.
+// For GMail compatibility, including CSS styles in head/body are stripped out therefore styles need to be inline. These variables contain rules which are added to the template inline. !important; is a gmail hack to prevent styles being stripped if it doesn't like something.
 $body = "
 	background-color: #f6f6f6;
 	font-family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
 ";
-$wrapper = "
+$wrapper = '
 	width:100%;
 	-webkit-text-size-adjust:none !important;
 	margin:0;
 	padding: 70px 0 70px 0;
-";
-$template_container = "
+';
+$template_container = '
 	box-shadow:0 0 0 1px #f3f3f3 !important;
 	border-radius:3px !important;
 	background-color: #ffffff;
 	border: 1px solid #e9e9e9;
 	border-radius:3px !important;
 	padding: 20px;
-";
-$template_header = "
+';
+$template_header = '
 	color: #00000;
 	border-top-left-radius:3px !important;
 	border-top-right-radius:3px !important;
@@ -37,7 +40,7 @@ $template_header = "
 	line-height:100%;
 	text-align: center;
 	vertical-align:middle;
-";
+';
 $body_content = "
 	border-radius:3px !important;
 	font-family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
