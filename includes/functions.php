@@ -358,12 +358,15 @@ function edd_email_reports_send_daily_email() {
 	// $message will be rendered during edd_email_message filter
 	$message = '';
 
-	// Swip out the email template before we send the email.
+	// Swap out the email template before we send the email.
 	add_action( 'edd_email_send_before', 'edd_email_reports_change_email_template' );
 
 	EDD()->emails->html    = true;
 	EDD()->emails->heading = sprintf( __( 'Daily Sales Report – %1$s', 'edd-email-reports' ), get_bloginfo( 'name' ) );
 	EDD()->emails->send( edd_get_admin_notice_emails(), sprintf( __( 'Daily Sales Report for %1$s', 'edd-email-reports' ), get_bloginfo( 'name' ) ), $message );
+
+	remove_action( 'edd_email_send_before', 'edd_email_reports_change_email_template' );
+	remove_filter( 'edd_email_template', 'edd_email_reports_set_email_template' );
 }
 
 /**
