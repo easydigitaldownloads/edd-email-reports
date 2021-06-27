@@ -109,27 +109,27 @@ function edd_email_reports_cold_selling_downloads() {
 		'posts_per_page' => - 1,
 	);
 
-	$result = get_posts( $args );
+	$downloads = get_posts( $args );
 
 	$last_sale_dates = array();
 
-	/* @var EDD_Logging $edd_logs */
+	/** @var EDD_Logging $edd_logs */
 	global $edd_logs;
 
-	if ( ! empty( $result ) ) {
+	if ( ! empty( $downloads ) ) {
 
-		foreach ( $result as $download ) {
+		foreach ( $downloads as $download ) {
 
-			$result = $edd_logs->get_connected_logs(
+			$logs = $edd_logs->get_connected_logs(
 				array(
-					'post_parent'    => $download->ID,
-					'log_type'       => 'sale',
-					'posts_per_page' => 1,
+					'object_id' => $download->ID,
+					'type'      => 'sale',
+					'number'    => 1,
 				)
 			);
 
-			if ( ! empty( $result ) ) {
-				$last_sale_dates[ $download->post_title ] = $result[0]->post_date;
+			if ( ! empty( $logs ) ) {
+				$last_sale_dates[ $download->post_title ] = $logs[0]->date_created;
 			}
 		}
 
@@ -284,7 +284,7 @@ function edd_email_reports_weekly_best_selling_downloads() {
 			'number'     => - 1,
 			'start_date' => '6 days ago 00:00',
 			'end_date'   => 'now',
-			'status'     => 'publish',
+			'status'     => 'complete',
 		)
 	);
 
