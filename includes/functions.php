@@ -299,7 +299,7 @@ function edd_email_reports_weekly_best_selling_downloads() {
 			'number'     => - 1,
 			'start_date' => '6 days ago 00:00',
 			'end_date'   => 'now',
-			'status'     => 'complete',
+			'status'     => 'publish', // EDD 3.0 will auto convert to 'complete'.
 		)
 	);
 
