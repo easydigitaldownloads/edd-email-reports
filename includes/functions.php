@@ -113,9 +113,6 @@ function edd_email_reports_cold_selling_downloads() {
 
 	$last_sale_dates = array();
 
-	/** @var EDD_Logging $edd_logs */
-	global $edd_logs;
-
 	if ( ! empty( $downloads ) ) {
 
 		foreach ( $downloads as $download ) {
@@ -134,6 +131,9 @@ function edd_email_reports_cold_selling_downloads() {
 					$last_sale_dates[ $download->post_title ] = $result[0]->date_created;
 				}
 			} else {
+				/** @var EDD_Logging $edd_logs */
+				global $edd_logs;
+
 				$result = $edd_logs->get_connected_logs(
 					array(
 						'post_parent'    => $download->ID,
