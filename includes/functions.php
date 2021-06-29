@@ -120,16 +120,31 @@ function edd_email_reports_cold_selling_downloads() {
 
 		foreach ( $downloads as $download ) {
 
-			$logs = $edd_logs->get_connected_logs(
-				array(
-					'object_id' => $download->ID,
-					'type'      => 'sale',
-					'number'    => 1,
-				)
-			);
+			if ( function_exists( 'edd_get_orders' ) ) {
+				$result = edd_get_orders( array(
+					'type'       => 'sale',
+					'status__in' => edd_get_gross_order_statuses(),
+					'product_id' => $download->ID,
+					'orderby'    => 'date_created',
+					'order'      => 'DESC',
+					'number'     => 1
+				) );
 
-			if ( ! empty( $logs ) ) {
-				$last_sale_dates[ $download->post_title ] = $logs[0]->date_created;
+				if ( ! empty( $result[0] ) ) {
+					$last_sale_dates[ $download->post_title ] = $result[0]->date_created;
+				}
+			} else {
+				$result = $edd_logs->get_connected_logs(
+					array(
+						'post_parent'    => $download->ID,
+						'log_type'       => 'sale',
+						'posts_per_page' => 1,
+					)
+				);
+
+				if ( ! empty( $result ) ) {
+					$last_sale_dates[ $download->post_title ] = $result[0]->post_date;
+				}
 			}
 		}
 
