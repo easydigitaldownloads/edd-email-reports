@@ -296,7 +296,7 @@ function edd_email_reports_monthly_total() {
 function edd_email_reports_weekly_best_selling_downloads() {
 	$p_query = new EDD_Payments_Query(
 		array(
-			'number'     => - 1,
+			'number'     => 9999,
 			'start_date' => '6 days ago 00:00',
 			'end_date'   => 'now',
 			'status'     => 'publish', // EDD 3.0 will auto convert to 'complete'.
