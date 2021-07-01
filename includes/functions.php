@@ -109,27 +109,42 @@ function edd_email_reports_cold_selling_downloads() {
 		'posts_per_page' => - 1,
 	);
 
-	$result = get_posts( $args );
+	$downloads = get_posts( $args );
 
 	$last_sale_dates = array();
 
-	/* @var EDD_Logging $edd_logs */
-	global $edd_logs;
+	if ( ! empty( $downloads ) ) {
 
-	if ( ! empty( $result ) ) {
+		foreach ( $downloads as $download ) {
 
-		foreach ( $result as $download ) {
+			if ( function_exists( 'edd_get_orders' ) ) {
+				$result = edd_get_orders( array(
+					'type'       => 'sale',
+					'status__in' => edd_get_gross_order_statuses(),
+					'product_id' => $download->ID,
+					'orderby'    => 'date_created',
+					'order'      => 'DESC',
+					'number'     => 1
+				) );
 
-			$result = $edd_logs->get_connected_logs(
-				array(
-					'post_parent'    => $download->ID,
-					'log_type'       => 'sale',
-					'posts_per_page' => 1,
-				)
-			);
+				if ( ! empty( $result[0] ) ) {
+					$last_sale_dates[ $download->post_title ] = $result[0]->date_created;
+				}
+			} else {
+				/** @var EDD_Logging $edd_logs */
+				global $edd_logs;
 
-			if ( ! empty( $result ) ) {
-				$last_sale_dates[ $download->post_title ] = $result[0]->post_date;
+				$result = $edd_logs->get_connected_logs(
+					array(
+						'post_parent'    => $download->ID,
+						'log_type'       => 'sale',
+						'posts_per_page' => 1,
+					)
+				);
+
+				if ( ! empty( $result ) ) {
+					$last_sale_dates[ $download->post_title ] = $result[0]->post_date;
+				}
 			}
 		}
 
@@ -284,7 +299,7 @@ function edd_email_reports_weekly_best_selling_downloads() {
 			'number'     => - 1,
 			'start_date' => '6 days ago 00:00',
 			'end_date'   => 'now',
-			'status'     => 'publish',
+			'status'     => 'publish', // EDD 3.0 will auto convert to 'complete'.
 		)
 	);
 
