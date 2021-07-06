@@ -1,188 +1,132 @@
+# Copyright (C) 2021 Sandhills Development, LLC
+# This file is distributed under the same license as the Easy Digital Downloads - Email Reports plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: EDD Email Reports\n"
-"POT-Creation-Date: 2014-11-13 17:22-0500\n"
-"PO-Revision-Date: 2014-11-13 17:22-0500\n"
-"Last-Translator: Dave Kiss <dave@davekiss.com>\n"
-"Language-Team:  <dave@davekiss.com>\n"
-"Language: en_US\n"
+"Project-Id-Version: Easy Digital Downloads - Email Reports 1.0.6\n"
+"Report-Msgid-Bugs-To: https://easydigitaldownloads.com/support\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.10\n"
-"X-Poedit-Basepath: ../\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-KeywordsList: __;_e;_n\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-SearchPath-0: .\n"
+"POT-Creation-Date: 2021-07-06T14:26:14+01:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.5.0\n"
+"X-Domain: edd-email-reports\n"
 
-#: edd-email-reports.php:221
-msgid "Email Report Template"
+#. Plugin Name of the plugin
+msgid "Easy Digital Downloads - Email Reports"
 msgstr ""
 
-#: edd-email-reports.php:245
-msgid "Email Reports Settings"
+#. Plugin URI of the plugin
+msgid "http://easydigitaldownloads.com/extension/email-reports"
 msgstr ""
 
-#: edd-email-reports.php:246
-msgid "Configure EDD Email Reports Settings"
+#. Description of the plugin
+msgid "Sends a beautiful, comprehensive sales performance report once a day to the store admin."
 msgstr ""
 
-#: edd-email-reports.php:251
-msgid "Daily Email Delivery Time"
+#. Author of the plugin
+msgid "Sandhills Development, LLC"
 msgstr ""
 
-#: edd-email-reports.php:252
-msgid "Select when you would like to receive your daily email report."
-msgstr ""
-
-#: edd-email-reports.php:255
-msgid "1:00 PM"
-msgstr ""
-
-#: edd-email-reports.php:256
-msgid "2:00 PM"
-msgstr ""
-
-#: edd-email-reports.php:257
-msgid "3:00 PM"
-msgstr ""
-
-#: edd-email-reports.php:258
-msgid "4:00 PM"
-msgstr ""
-
-#: edd-email-reports.php:259
-msgid "5:00 PM"
+#. Author URI of the plugin
+msgid "https://sandhillsdev.com"
 msgstr ""
 
 #: edd-email-reports.php:260
-msgid "6:00 PM"
+msgid "Email Reports Settings"
 msgstr ""
 
 #: edd-email-reports.php:261
-msgid "7:00 PM"
+msgid "Configure EDD Email Reports Settings"
 msgstr ""
 
-#: edd-email-reports.php:262
-msgid "8:00 PM"
-msgstr ""
-
-#: edd-email-reports.php:263
-msgid "9:00 PM"
-msgstr ""
-
-#: edd-email-reports.php:264
-msgid "10:00 PM"
-msgstr ""
-
-#: edd-email-reports.php:265
-msgid "11:00 PM"
-msgstr ""
-
-#: edd-email-reports.php:286
-msgid "Preview Email Report"
-msgstr ""
-
-#: edd-email-reports.php:318 includes/functions.php:339
-#, php-format
+#: edd-email-reports.php:332
+#: includes/functions.php:383
 msgid "Daily Sales Report – %1$s"
 msgstr ""
 
-#: includes/class.extension-activation.php:47
-msgid "This plugin"
-msgstr ""
-
-#: includes/class.extension-activation.php:89
-msgid " requires Easy Digital Downloads! Please activate it to continue!"
-msgstr ""
-
-#: includes/class.extension-activation.php:91
-msgid " requires Easy Digital Downloads! Please install it to continue!"
-msgstr ""
-
-#: includes/functions.php:38
+#: includes/functions.php:46
 msgid "Adds the currency setting for the store."
 msgstr ""
 
-#: includes/functions.php:43 includes/functions.php:48
+#: includes/functions.php:51
+#: includes/functions.php:56
 msgid "Adds the total amount earned for the day."
 msgstr ""
 
-#: includes/functions.php:53
+#: includes/functions.php:61
 msgid "Adds the number of transactions for the day."
 msgstr ""
 
-#: includes/functions.php:58 includes/functions.php:63
+#: includes/functions.php:66
+#: includes/functions.php:71
 msgid "Adds the total amount earned for the week."
 msgstr ""
 
-#: includes/functions.php:68
+#: includes/functions.php:76
 msgid "Adds the total amount earned for the monthly."
 msgstr ""
 
-#: includes/functions.php:73
+#: includes/functions.php:81
 msgid "Adds the total amount earned for past seven days."
 msgstr ""
 
-#: includes/functions.php:78
+#: includes/functions.php:86
 msgid "Adds the total amount earned for past thirty days."
 msgstr ""
 
-#: includes/functions.php:83
+#: includes/functions.php:91
 msgid "Displays the least selling downloads and their last sale date."
 msgstr ""
 
-#: includes/functions.php:148 includes/functions.php:311
+#: includes/functions.php:177
 msgid "No sales found."
 msgstr ""
 
-#: includes/functions.php:152
+#: includes/functions.php:181
 msgid "No downloads found."
 msgstr ""
 
-#: includes/functions.php:301
+#: includes/functions.php:341
 msgid "sale"
-msgstr ""
+msgid_plural "sales"
+msgstr[0] ""
+msgstr[1] ""
 
-#: includes/functions.php:340
-#, php-format
+#: includes/functions.php:384
 msgid "Daily Sales Report for %1$s"
 msgstr ""
 
-#: templates/emails/body-report.php:19
-#, php-format
+#: templates/emails/body-report.php:22
 msgid "Happy %1$s!"
 msgstr ""
 
-#: templates/emails/body-report.php:28
+#: templates/emails/body-report.php:33
 msgid "orders today"
 msgstr ""
 
-#: templates/emails/body-report.php:29
+#: templates/emails/body-report.php:34
 msgid "past seven days"
 msgstr ""
 
-#: templates/emails/body-report.php:34
+#: templates/emails/body-report.php:40
 msgid "this week"
 msgstr ""
 
-#: templates/emails/body-report.php:35
+#: templates/emails/body-report.php:43
 msgid "this month"
 msgstr ""
 
-#: templates/emails/body-report.php:36
+#: templates/emails/body-report.php:46
 msgid "past 30 days"
 msgstr ""
 
-#: templates/emails/body-report.php:43
+#: templates/emails/body-report.php:54
 msgid "Best-selling downloads over the past week:"
 msgstr ""
 
-#: templates/emails/body-report.php:50
+#: templates/emails/body-report.php:61
 msgid "These downloads have been pretty quiet lately:"
-msgstr ""
-
-#: uninstall.php:4
-msgid "Plugin uninstallation can not be executed in this fashion."
 msgstr ""
