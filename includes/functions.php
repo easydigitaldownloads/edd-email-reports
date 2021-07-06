@@ -362,7 +362,7 @@ function edd_email_reports_weekly_best_selling_downloads() {
  * @return int   Returns either -1, 0, or 1, depending on the comparison of $a and $b.
  */
 function edd_email_reports_sort_best_selling_downloads( $a, $b ) {
-	if ( $a == $b ) {
+	if ( $a['earnings'] == $b['earnings'] ) {
 		return 0;
 	}
 	return ( $a['earnings'] < $b['earnings'] ) ? -1 : 1;
