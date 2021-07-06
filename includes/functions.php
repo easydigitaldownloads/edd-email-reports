@@ -365,7 +365,7 @@ function edd_email_reports_sort_best_selling_downloads( $a, $b ) {
 	if ( $a['earnings'] == $b['earnings'] ) {
 		return 0;
 	}
-	return ( $a['earnings'] < $b['earnings'] ) ? -1 : 1;
+	return ( $a['earnings'] < $b['earnings'] ) ? 1 : -1;
 }
 
 /**
