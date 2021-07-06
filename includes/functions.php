@@ -359,10 +359,13 @@ function edd_email_reports_weekly_best_selling_downloads() {
  * @param  array $a The item being sorted.
  * @param  array $b The item being sorted against.
  *
- * @return [type]    [description]
+ * @return int   Returns either -1, 0, or 1, depending on the comparison of $a and $b.
  */
 function edd_email_reports_sort_best_selling_downloads( $a, $b ) {
-	return $a['earnings'] < $b['earnings'];
+	if ( $a['earnings'] == $b['earnings'] ) {
+		return 0;
+	}
+	return ( $a['earnings'] < $b['earnings'] ) ? 1 : -1;
 }
 
 /**
